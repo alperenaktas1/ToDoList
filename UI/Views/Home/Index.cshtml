@@ -1,0 +1,43 @@
+﻿@using Entity.Concrete
+@model List<Mission>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a class="btn btn-outline-success" href="/Home/AddMission/" > Add Mission </a>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Mission Name</th>
+        <th>Mission State</th>
+        <th>Mission Description</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        var Comp = "";
+        var bg = "";
+        if (item.MissionState != true)
+        {
+            Comp = "Not Completed";
+            bg = "btn btn-danger";
+        }
+        else
+        {
+            Comp = "Completed";
+            bg = "btn btn-success";
+        }
+        <tr>
+            <td>@item.MissionID</td>
+            <td >@item.MissionName</td>
+            <td> <input type="checkbox" disabled checked="@item.MissionState" /> </td>
+            <td>@item.MissionDescription</td>
+            <td> <a class="btn btn-danger" asp-action="DeleteMission" asp-controller="Home" asp-route-id="@item.MissionID"> Delete </a> </td>
+            <td>
+                <a class="@bg" asp-action="ComplatedMission" asp-controller="Home" asp-route-id="@item.MissionID"> @Comp </a>
+            </td>
+        </tr>
+    }
+
+</table>

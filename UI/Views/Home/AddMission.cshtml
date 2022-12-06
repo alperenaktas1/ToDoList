@@ -1,0 +1,25 @@
+﻿@using Entity.Concrete
+@model Mission
+@{
+    ViewData["Title"] = "AddMission";
+}
+
+<h1>Add Mission</h1>
+
+<form method="post" class="card container w-50">
+    <div class="form-group p-3">
+        <label>Mission Name:</label>
+        <input class="form-control float-start" asp-for="MissionName" placeholder="Mission Name" />
+    </div>
+    <hr />
+    <div class="form-group p-3 ">
+        <label>Mission Description:</label>
+        <input class="form-control float-start" asp-for="MissionDescription" placeholder="Mission Description" />
+    </div>
+    <hr />
+    <button class="btn btn-success" type="submit"> Save </button>
+    
+
+
+</form>
+

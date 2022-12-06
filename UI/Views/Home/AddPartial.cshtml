@@ -1,0 +1,26 @@
+﻿<a class="btn btn-primary" data-toggle="modal" data-target="#Modal1">
+    Yeni Hakkımızda Yazı Girişi
+</a>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Mission Edit</h2>
+            </div>
+            <form method="post" action="/Home/AddMission/">
+                <div class="modal-body">
+                    <label>Mission Name</label>
+                    <input type="text" name="MissionName" class="form-control" />
+                    <br />
+
+                    <label>Mission Description</label>
+                    <input type="text" name="MissionDescription" class="form-control" />
+                    <br />
+
+                    <button class="btn btn-info">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
